@@ -28,7 +28,7 @@
 								$students = Student::all(null);  
 								foreach ($students as $student)
 								{ 
-								?>
+							?>
 								<option value="<?=$student->id?>"><?php echo $student->name?></option>
 							<?php
 								}
