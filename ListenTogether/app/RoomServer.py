@@ -1,11 +1,10 @@
 import asyncore
 import socket
-import sys
-
+from threading import Thread
 
 class CommunicationHandler(asyncore.dispatcher_with_send):
     def handle_read(self):
-        data = self.recv(1024)
+        data = self.recv(8192)
         if data:
             self.send(data)
 
@@ -23,26 +22,16 @@ class RoomServer(asyncore.dispatcher):
 
     def handle_accept(self):
         pair = self.accept()
+        if pair is not None:
+            sock,addr = pair
+            print('Incoming connection from %s' % repr(addr))
+            handler = CommunicationHandler(sock)
 
-    def handle_accepted(self, sock, addr):
-        print('Incoming connection from %s' % repr(addr))
-        handler = CommunicationHandler(sock)
 
-    def handle_connect(self):
-        print("handle connect")
+def asyncoreLoop():
+    while True:
+        asyncore.loop()
 
-    def handle_connect_event(self):
-        print ("Handle connect event")
-
-    def handle_error(self):
-        print("handle error")
-
-    def handle_expt(self):
-        print("handle expt")
-
-    def handle_expt_event(self):
-        print("hee")
-
-print("looping")
-asyncore.loop()
-print("still")
+t1 = Thread(target=asyncoreLoop)
+t1.setDaemon(True)
+t1.start()
