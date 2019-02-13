@@ -20,7 +20,7 @@ class Profile(db.Model):
     UserID = db.Column(db.Integer, db.ForeignKey('user.UserID'))
     user = db.relationship("User", back_populates="profile")
     friends = db.relationship('Friend', backref='centerProfile', lazy='dynamic')
-    songs = db.relationship('PlayList', backref='playerListOwner', lazy='dynamic')
+    songs = db.relationship('PlayList', backref='playListOwner', lazy='dynamic')
 
     def __repr__(self):
         return '<Nickname {}>'.format(self.Nickname)
