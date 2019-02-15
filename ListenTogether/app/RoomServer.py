@@ -1,7 +1,7 @@
 import asyncore
 import socket
 from threading import Thread
-
+from app import yt_api
 
 class CommunicationHandler(asyncore.dispatcher_with_send):
 
@@ -13,21 +13,28 @@ class CommunicationHandler(asyncore.dispatcher_with_send):
         data = self.recv(8192)
         if data:
             data_string = data.decode('ascii')
-            msg = ""
             if data_string == 'resume':
                 self.room.player_state = 1
                 msg = str(self.room.player_state)
+                self.send(msg.encode('ascii'))
             elif data_string == 'pause':
                 self.room.player_state = 0
                 msg = str(self.room.player_state)
+                self.send(msg.encode('ascii'))
             elif data_string == 'state':
                 msg = str(self.room.player_state)
+                self.send(msg.encode('ascii'))
             elif data_string.__contains__('seek'):
                 parts = data_string.partition(" ")
                 self.room.time = parts[1]
             elif data_string == 'time':
                 msg = self.room.time
-            self.send(msg.encode('ascii'))
+                self.send(msg.encode('ascii'))
+            elif data_string == 'url':
+                msg = self.room.url
+                self.send(msg.encode('ascii'))
+            else:
+                self.room.url = yt_api.search_song(data_string)
 
 
 class RoomServer(asyncore.dispatcher):
@@ -50,7 +57,6 @@ class RoomServer(asyncore.dispatcher):
             sock,addr = pair
             print('Incoming connection from %s' % repr(addr))
             handler = CommunicationHandler(sock, room=self)
-
 
 
 def asyncore_loop():
