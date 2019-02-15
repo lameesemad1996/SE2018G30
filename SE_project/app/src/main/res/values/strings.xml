@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ListenTogether</string>
+    <string name="signin_button">Sign In</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="welcome_heading">Welcome to ListenTogether!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="nickname">Nickname</string>
+    <string name="email">Email</string>
+    <string name="create_room">Create Room</string>
+    <string name="join_room">Join Room</string>
+    <string name="search">Search</string>
+    <string name="song_name">Song Name</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="profile">Profile</string>
+</resources>
