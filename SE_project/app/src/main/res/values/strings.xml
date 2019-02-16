@@ -13,4 +13,7 @@
     <string name="song_name">Song Name</string>
     <string name="now_playing">Now Playing</string>
     <string name="profile">Profile</string>
+    <string name="show_playlists">Show Profile</string>
+    <string name="show_following">Show Following</string>
+    <string name="add_playlist">Add Playlist</string>
 </resources>
