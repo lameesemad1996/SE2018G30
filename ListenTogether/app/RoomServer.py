@@ -15,12 +15,8 @@ class CommunicationHandler(asyncore.dispatcher_with_send):
             data_string = data.decode('ascii')
             if data_string == 'resume':
                 self.room.player_state = 1
-                msg = str(self.room.player_state)
-                self.send(msg.encode('ascii'))
             elif data_string == 'pause':
                 self.room.player_state = 0
-                msg = str(self.room.player_state)
-                self.send(msg.encode('ascii'))
             elif data_string == 'state':
                 msg = str(self.room.player_state)
                 self.send(msg.encode('ascii'))
@@ -28,10 +24,10 @@ class CommunicationHandler(asyncore.dispatcher_with_send):
                 parts = data_string.partition(" ")
                 self.room.time = parts[1]
             elif data_string == 'time':
-                msg = self.room.time
-                self.send(msg.encode('ascii'))
+                self.send(self.roo.time.to_bytes(length=3, byteorder="little"))
             elif data_string == 'url':
                 msg = self.room.url
+                self.send(len(msg.encode('ascii')))
                 self.send(msg.encode('ascii'))
             else:
                 self.room.url = yt_api.search_song(data_string)
