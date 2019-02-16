@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f779a047-69c1-49cf-adf4-f7730af6e22f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/RoomServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/RoomServer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SE_project/.idea/caches/gradle_models.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../SE_project/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_project/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SE_project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_project/.idea/misc.xml" afterDir="false" />
@@ -614,12 +612,12 @@
       <workItem from="1550265850112" duration="1784000" />
       <workItem from="1550271172933" duration="754000" />
       <workItem from="1550278207458" duration="1483000" />
-      <workItem from="1550280152464" duration="271000" />
+      <workItem from="1550280152464" duration="870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68845000" />
+    <option name="totallyTimeSpent" value="69444000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">

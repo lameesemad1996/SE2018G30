@@ -26,12 +26,13 @@ public class signIn extends AppCompatActivity {
         TextView passwordText = (TextView) findViewById(R.id.editText8);
         String password = passwordText.getText().toString();
         String url = "/signup?username="+username+"&password="+password;
-        Requests.sendRequest(url, this, new Response.Listener<String>() {
+       /* Requests.sendRequest(url, this, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
             }
         },
                 R);
+                */
     }
 }
