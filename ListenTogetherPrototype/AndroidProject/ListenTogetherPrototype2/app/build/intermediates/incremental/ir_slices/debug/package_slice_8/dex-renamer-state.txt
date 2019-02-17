@@ -1,0 +1,4 @@
+#Mon Nov 26 03:45:46 EET 2018
+base.0=D\:\\ListenTogetherPrototype2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex

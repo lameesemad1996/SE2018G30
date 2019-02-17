@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Timer timer = new Timer();
-        timer.schedule(new StatusUpdate(getApplicationContext()), 0, 5000);
     }
 
     public void signIn(View view)

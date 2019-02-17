@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import java.util.Timer;
+
 import static java.util.logging.Logger.global;
 
 public class mainscreen extends AppCompatActivity {
@@ -18,6 +20,10 @@ public class mainscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainscreen);
+
+        Timer timer = new Timer();
+        timer.schedule(new StatusUpdate(getApplicationContext(), MySingleton.username), 0, 5000);
+
     }
 
     public void createRoom(View view)

@@ -25,7 +25,7 @@ public class signIn extends AppCompatActivity {
         final Intent i = new Intent(this, mainscreen.class);
 
         TextView usernameText = (TextView) findViewById(R.id.editText7);
-        String username = usernameText.getText().toString();
+        final String username = usernameText.getText().toString();
         TextView passwordText = (TextView) findViewById(R.id.editText8);
         String password = passwordText.getText().toString();
 
@@ -38,6 +38,7 @@ public class signIn extends AppCompatActivity {
                     {
                         if (response.equals("Welcome"))
                         {
+                            MySingleton.username = username;
                             startActivity(i);
                         }
                         else

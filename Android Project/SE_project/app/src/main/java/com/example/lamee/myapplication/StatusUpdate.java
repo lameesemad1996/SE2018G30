@@ -16,15 +16,17 @@ import java.util.TimerTask;
 public class StatusUpdate extends TimerTask
 {
     Context c;
-    public StatusUpdate(Context context)
+    String username;
+    public StatusUpdate(Context context, String usernameIN)
     {
         c = context;
+        username = usernameIN;
     }
     public void run()
     {
-        String url = "/update_status";
+        String url = "/update_status?username="+username;
         RequestQueue queue = MySingleton.getInstance(c).getRequestQueue();
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Requests.host+url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

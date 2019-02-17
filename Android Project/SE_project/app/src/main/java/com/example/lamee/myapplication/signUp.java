@@ -35,7 +35,7 @@ public class signUp extends AppCompatActivity
         final Intent i = new Intent(this, mainscreen.class);
 
         TextView usernameText = (TextView) findViewById(R.id.editText2);
-        String username = usernameText.getText().toString();
+        final String username = usernameText.getText().toString();
         TextView passwordText = (TextView) findViewById(R.id.editText4);
         String password = passwordText.getText().toString();
         TextView nicknameText = (TextView) findViewById(R.id.editText5);
@@ -62,6 +62,7 @@ public class signUp extends AppCompatActivity
                                         {
                                             if (response.equals("Profile filled"))
                                             {
+                                                MySingleton.username = username;
                                                 startActivity(i);
                                             }
                                             else

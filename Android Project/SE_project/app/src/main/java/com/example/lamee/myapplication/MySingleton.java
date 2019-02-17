@@ -13,6 +13,7 @@ public class MySingleton
 {
     public static int port;
     public static boolean SignedUp;
+    public static String username;
     private static MySingleton mInstance;
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
