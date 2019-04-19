@@ -5,7 +5,6 @@
 ### Team:
 - Matthew Emile Nabih
 - Lamees Emad Ibrahim
-- Abdelrahman Ahmed
 
 ### Links:
 
